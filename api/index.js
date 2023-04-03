@@ -24,7 +24,7 @@ app.use("/api/hotels", hotelsRoute);
 app.use("/api/rooms", roomsRoute); 
 app.use("/api/users", usersRoute); 
 
-app.listen(8800, ()=>{
+app.listen(8801, ()=>{
     connect()
     console.log("connected to back!")
 })
