@@ -1,4 +1,5 @@
 import express from "express"
+import cors from "cors"
 import cookieParser from 'cookie-parser';
 import dotenv , { config } from "dotenv"
 import mongoose from "mongoose"
@@ -9,6 +10,7 @@ import usersRoute from "./routes/users.js"
 import reservationsRoute from "./routes/reservations.js"
 
 const app = express()
+app.use(cors())
 dotenv.config()
 const connect = async ()=>{
     try {
