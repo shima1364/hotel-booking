@@ -26,8 +26,8 @@ const HotelSchema = new mongoose.Schema(
             required:true
         },
         location: {
-            "lat": Number,
-            "lng": Number,
+            lat: Number,
+            lng: Number,
           },
 
         desc:{
@@ -50,6 +50,8 @@ const HotelSchema = new mongoose.Schema(
             type:Boolean,
             default:false,
         },
+        parking:{type:Boolean,
+        default:false}
 
         
 
