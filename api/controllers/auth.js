@@ -31,11 +31,11 @@ export const login = async (req,res,next) =>{
     {id: user._id},  process.env.Jwt)
 
    
-   const{password, username, ...otherDetails} = user._doc;
+   const{password, username,_id, ...otherDetails} = user._doc;
    res
    .status(200)
-   .json({token, ...otherDetails});
+   .json({token, userId:_id});
   } catch (err) {
     next(err)
-  }  
+  } 
 }  
