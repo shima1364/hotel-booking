@@ -30,10 +30,20 @@ export const createReservation= async (req, res,next) => {
         checkOutDate,
         numberOfRooms,
       });
+      
   
       await reservation.save();
   
       res.status(201).send(reservation);
+    } catch (err) {
+      next(err);
+    }
+  };
+  export const getReservations = async (req, res, next) => {
+    const userId = req.params.userId;
+    try {
+      const reservations = await Reservation.find({ user: userId });
+      res.json(reservations);
     } catch (err) {
       next(err);
     }
