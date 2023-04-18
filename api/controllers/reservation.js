@@ -7,7 +7,7 @@ import User from "../models/User.js";
 export const createReservation= async (req, res,next) => {
     try {
       const { userId } = req.params;
-      const { hotelId, checkInDate, checkOutDate, numberOfRooms } = req.body;
+      const { hotelId,hotelName, checkInDate, checkOutDate, numberOfRooms } = req.body;
   
       // Check if the user exists
       const user = await User.findById(userId);
@@ -25,6 +25,7 @@ export const createReservation= async (req, res,next) => {
       const reservation = new Reservation({
         user: userId,
         hotel: hotelId,
+        hotelName,
         checkInDate,
         checkOutDate,
         numberOfRooms,

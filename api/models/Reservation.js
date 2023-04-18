@@ -24,6 +24,10 @@ const ReservationSchema = new mongoose.Schema({
     numberOfRooms: {
       type: Number,
       required: true
+    },
+    hotelName: {
+      type: String,
+      required: true
     }
   });
   export default mongoose.model("Resevation", ReservationSchema)
