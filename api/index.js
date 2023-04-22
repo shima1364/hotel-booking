@@ -32,6 +32,7 @@ const connect = async ()=>{
     app.use('/api/users', reservationsRoute);
     
     app.use((err,req,res,next)=>{
+      console.log(err, 'err')
       const errorStatuus = err.status || 500
       const errorMessage = err.errorMessage || "Something went wrong"
       return res.status(errorStatuus).json(errorMessage)
